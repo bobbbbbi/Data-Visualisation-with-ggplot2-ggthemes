@@ -49,3 +49,11 @@ scale_color_ptol <- scale_colour_ptol
 scale_fill_ptol <- function(...) {
   discrete_scale("fill", "ptol", ptol_pal(), ...)
 }
+
+
+rainbow <- function(x) {
+  red <- sum(c(0.472, -0.567, 4.05) * x ^ 0:2) / sum(c(1, 8.72, -19.17, 14.1) * x ^ 0:3)
+  green <- sum(c(0.108932, -1.22635, 27.284, -98.577, 163.3, -131.395, 40.634) * x ^ 0:6)
+  blue <- 1 / sum(c(1.97, 3.54, -68.5, 243, -297, 125) * x ^ 0:5)
+  cbind(red, green, blue)
+}
